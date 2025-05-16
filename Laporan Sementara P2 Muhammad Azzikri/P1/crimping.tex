@@ -1,0 +1,101 @@
+\section{Pendahuluan}
+\subsection*{Latar Belakang}
+
+Seiring dengan pesatnya pertumbuhan perangkat yang terhubung ke internet, kebutuhan akan alamat IP yang lebih luas menjadi semakin mendesak. Protokol IPv4 yang telah lama digunakan memiliki keterbatasan dalam jumlah alamat, hanya menyediakan sekitar 4,3 miliar alamat yang sebagian besar telah terpakai. Untuk mengatasi permasalahan tersebut, dikembangkan protokol baru yaitu IPv6 (Internet Protocol version 6), yang menyediakan ruang alamat yang jauh lebih besar serta fitur-fitur modern yang tidak tersedia pada IPv4.
+
+Dalam implementasinya, penggunaan IPv6 tidak hanya sebatas pada pemberian alamat IP, namun juga mencakup manajemen dan pengaturan routing agar komunikasi antar jaringan berjalan dengan baik. Routing pada IPv6 memiliki prinsip yang mirip dengan IPv4, namun dengan penyesuaian pada format alamat dan mekanisme tertentu. Oleh karena itu, pemahaman mengenai konfigurasi alamat IPv6 serta pengelolaan routing, baik secara statis maupun dinamis, sangat penting untuk mendukung infrastruktur jaringan yang andal dan efisien.
+
+Praktikum ini bertujuan untuk mengenalkan dan melatih mahasiswa dalam melakukan konfigurasi dan manajemen jaringan berbasis IPv6, mulai dari pemberian alamat, pengujian koneksi, hingga penerapan routing statis maupun dinamis antar subnet. Melalui praktik langsung, diharapkan mahasiswa dapat memahami konsep dasar dan langkah-langkah teknis yang dibutuhkan dalam implementasi jaringan IPv6.
+
+\subsection*{Dasar Teori}
+
+\textbf{Internet Protocol Version 6 (IPv6)} merupakan generasi terbaru dari protokol internet yang dirancang untuk menggantikan IPv4. IPv6 menggunakan alamat sepanjang 128 bit, yang memungkinkan pengalamatan hingga $2^{128}$ alamat unik, jauh lebih banyak dibandingkan dengan 32 bit pada IPv4. Alamat IPv6 ditulis dalam format heksadesimal yang dipisahkan dengan tanda titik dua (:), contohnya: \texttt{2001:db8::1}.
+
+Fitur-fitur penting pada IPv6 antara lain:
+\begin{itemize}
+    \item \textbf{Ruang alamat lebih besar}: Memungkinkan lebih banyak perangkat terhubung.
+    \item \textbf{Header lebih sederhana}: Mempercepat pemrosesan paket oleh router.
+    \item \textbf{Autokonfigurasi}: Mendukung Stateless Address Autoconfiguration (SLAAC).
+    \item \textbf{Keamanan bawaan}: Mendukung IPSec sebagai standar protokol keamanan.
+\end{itemize}
+
+\textbf{Routing} adalah proses pengiriman paket data dari satu jaringan ke jaringan lain menggunakan router. Pada IPv6, terdapat dua jenis routing yang umum digunakan:
+\begin{enumerate}
+    \item \textbf{Routing Statis}: Konfigurasi rute dilakukan secara manual oleh administrator. Cocok digunakan untuk jaringan kecil atau dengan topologi yang tidak sering berubah.
+    \item \textbf{Routing Dinamis}: Menggunakan protokol seperti RIPng atau OSPFv3 untuk membangun dan memperbarui tabel rute secara otomatis berdasarkan kondisi jaringan.
+\end{enumerate}
+
+\textbf{Manajemen IPv6} mencakup kegiatan seperti pengalokasian alamat IP untuk antarmuka jaringan, pengecekan konektivitas, konfigurasi gateway, dan pengaturan rute agar jaringan dapat saling terhubung. Pemahaman terhadap struktur subnet IPv6 serta cara membagi dan mengalokasikan alamat sangat penting dalam proses ini.
+
+Dengan menguasai dasar teori ini, mahasiswa diharapkan mampu menerapkan konfigurasi jaringan IPv6 secara efektif dalam lingkungan praktikum maupun dunia nyata.
+
+
+%===========================================================%
+\section*{Tugas Pendahuluan}
+
+\subsection*{1. Jelaskan apa itu IPv6 dan apa bedanya dengan IPv4}
+
+IPv6 (Internet Protocol version 6) merupakan versi terbaru dari protokol internet yang dikembangkan untuk menggantikan IPv4. Perbedaan utama antara keduanya terletak pada panjang alamat: IPv4 memiliki panjang 32 bit, sedangkan IPv6 memiliki panjang 128 bit. Dengan panjang alamat yang jauh lebih besar, IPv6 dapat menyediakan jumlah alamat IP yang sangat banyak, yaitu sekitar $3.4 \times 10^{38}$ alamat, dibandingkan dengan IPv4 yang hanya menyediakan sekitar 4,3 miliar alamat. Selain itu, IPv6 mendukung fitur-fitur baru seperti autokonfigurasi alamat (SLAAC), keamanan bawaan melalui IPSec, dan struktur header yang lebih efisien. IPv6 ditulis dalam notasi heksadesimal yang dipisahkan oleh tanda titik dua (:), sedangkan IPv4 menggunakan notasi desimal dengan pemisah titik (.).
+
+\subsection*{2. Sebuah organisasi mendapatkan blok alamat IPv6 2001:db8::/32}
+
+\textbf{a.} Blok alamat IPv6 \texttt{2001:db8::/32} perlu dibagi menjadi empat subnet dengan prefix /64. Karena setiap subnet IPv6 biasanya menggunakan prefix /64, maka pembagian dapat dilakukan dengan menambahkan 32 bit ke dalam struktur alamat. Empat subnet yang dihasilkan adalah sebagai berikut:
+\begin{itemize}
+    \item Subnet A: \texttt{2001:db8:0:1::/64}
+    \item Subnet B: \texttt{2001:db8:0:2::/64}
+    \item Subnet C: \texttt{2001:db8:0:3::/64}
+    \item Subnet D: \texttt{2001:db8:0:4::/64}
+\end{itemize}
+
+\textbf{b.} Hasil alokasi alamat IPv6 untuk masing-masing subnet adalah:
+\begin{itemize}
+    \item Subnet A: \texttt{2001:db8:0:1::/64}
+    \item Subnet B: \texttt{2001:db8:0:2::/64}
+    \item Subnet C: \texttt{2001:db8:0:3::/64}
+    \item Subnet D: \texttt{2001:db8:0:4::/64}
+\end{itemize}
+
+\subsection*{3. Asumsikan terdapat sebuah router yang menghubungkan keempat subnet melalui empat antarmuka}
+
+\textbf{a.} Setiap antarmuka pada router akan dihubungkan ke masing-masing subnet dan diberi alamat IPv6 sebagai berikut:
+\begin{itemize}
+    \item ether1 (Subnet A): \texttt{2001:db8:0:1::1/64}
+    \item ether2 (Subnet B): \texttt{2001:db8:0:2::1/64}
+    \item ether3 (Subnet C): \texttt{2001:db8:0:3::1/64}
+    \item ether4 (Subnet D): \texttt{2001:db8:0:4::1/64}
+\end{itemize}
+
+\textbf{b.} Konfigurasi IP address IPv6 pada masing-masing antarmuka router (misalnya pada router MikroTik) dapat dilakukan dengan perintah berikut:
+
+\begin{verbatim}
+/interface ethernet
+set [ find default-name=ether1 ] name=ether1-subnetA
+set [ find default-name=ether2 ] name=ether2-subnetB
+set [ find default-name=ether3 ] name=ether3-subnetC
+set [ find default-name=ether4 ] name=ether4-subnetD
+
+/ipv6 address
+add address=2001:db8:0:1::1/64 interface=ether1-subnetA
+add address=2001:db8:0:2::1/64 interface=ether2-subnetB
+add address=2001:db8:0:3::1/64 interface=ether3-subnetC
+add address=2001:db8:0:4::1/64 interface=ether4-subnetD
+\end{verbatim}
+
+\subsection*{4. Daftar IP Table berupa daftar rute statis agar semua subnet dapat saling berkomunikasi}
+
+Karena keempat subnet dihubungkan melalui satu router pusat, maka komunikasi antar subnet dapat dilakukan langsung. Namun, jika terdapat router tambahan yang ingin mengakses subnet tersebut, maka diperlukan penambahan rute statis. Contoh konfigurasi rute statis untuk router kedua yang terhubung ke router utama melalui ether1 adalah sebagai berikut:
+
+\begin{verbatim}
+/ipv6 route
+add dst-address=2001:db8:0:1::/64 gateway=fe80::1%ether1
+add dst-address=2001:db8:0:2::/64 gateway=fe80::1%ether1
+add dst-address=2001:db8:0:3::/64 gateway=fe80::1%ether1
+add dst-address=2001:db8:0:4::/64 gateway=fe80::1%ether1
+\end{verbatim}
+
+\subsection*{5. Fungsi routing statis pada jaringan IPv6 dan kapan digunakan}
+
+Routing statis pada jaringan IPv6 berfungsi untuk mengatur jalur lalu lintas paket secara manual antar subnet atau antar router. Dengan routing statis, administrator dapat menentukan rute tertentu tanpa bergantung pada protokol dinamis. Routing statis cocok digunakan pada jaringan kecil, topologi sederhana, atau ketika konfigurasi tidak sering berubah. Keuntungannya adalah lebih mudah dikontrol dan dipantau, serta tidak memerlukan banyak sumber daya. Namun, pada jaringan yang besar dan kompleks, routing dinamis seperti OSPFv3 atau RIPng lebih efisien karena dapat menyesuaikan dengan perubahan kondisi jaringan secara otomatis.
+
+
+
