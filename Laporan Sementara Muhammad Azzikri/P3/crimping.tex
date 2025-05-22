@@ -1,0 +1,66 @@
+\section{Pendahuluan}
+\subsection*{Latar Belakang}
+
+Dalam era digital saat ini, kebutuhan akan konektivitas jaringan yang cepat, fleksibel, dan efisien semakin meningkat. Jaringan nirkabel (\textit{wireless}) menjadi salah satu solusi yang banyak digunakan karena kemudahan dalam instalasi dan penggunaannya. Berbeda dengan jaringan kabel (\textit{wired}) yang memerlukan infrastruktur fisik, jaringan \textit{wireless} memungkinkan perangkat untuk terhubung ke jaringan tanpa kabel fisik, sehingga cocok digunakan dalam lingkungan yang dinamis dan sulit dijangkau oleh kabel.
+
+Penggunaan teknologi \textit{wireless} telah meluas dalam berbagai bidang, mulai dari rumah tangga, perkantoran, hingga sektor industri dan pendidikan. Oleh karena itu, pemahaman terhadap konsep dasar, konfigurasi, dan pengelolaan jaringan \textit{wireless} menjadi keterampilan penting yang harus dimiliki oleh mahasiswa di bidang teknologi informasi dan jaringan komputer.
+
+Melalui praktikum ini, mahasiswa diharapkan dapat memahami konsep jaringan \textit{wireless}, mengenal perangkat-perangkat yang digunakan, serta mampu mengkonfigurasi dan mengimplementasikan jaringan nirkabel secara langsung. Praktikum ini juga memberikan pengalaman praktis dalam menangani berbagai permasalahan yang mungkin terjadi pada jaringan \textit{wireless}.
+
+\subsection*{Dasar Teori}
+
+\begin{itemize}
+    \item \textbf{Jaringan Wireless:} Jaringan nirkabel adalah jenis jaringan komputer yang menggunakan gelombang radio sebagai media transmisi data antar perangkat. Tidak seperti jaringan kabel, jaringan \textit{wireless} memungkinkan mobilitas tinggi karena perangkat tidak terikat pada satu tempat secara fisik.
+
+    \item \textbf{Access Point (AP):} Access Point adalah perangkat yang berfungsi sebagai pusat koneksi jaringan \textit{wireless}. AP memungkinkan perangkat-perangkat klien seperti laptop, smartphone, atau tablet untuk terhubung ke jaringan lokal maupun internet.
+
+    \item \textbf{SSID (Service Set Identifier):} SSID adalah nama jaringan \textit{wireless} yang digunakan untuk mengidentifikasi jaringan tertentu. Perangkat pengguna harus mengetahui SSID untuk dapat terhubung ke jaringan tersebut.
+
+    \item \textbf{Keamanan Jaringan Wireless:} Karena sinyal \textit{wireless} dapat diakses secara bebas di area jangkauan, aspek keamanan menjadi sangat penting. Beberapa metode pengamanan meliputi WPA2/WPA3, MAC filtering, dan penggunaan firewall.
+
+    \item \textbf{Frekuensi dan Standar Wireless:} Jaringan \textit{wireless} umumnya beroperasi pada frekuensi 2.4 GHz dan 5 GHz, dengan standar IEEE 802.11 seperti 802.11a/b/g/n/ac/ax. Setiap standar memiliki karakteristik berbeda dalam hal kecepatan dan jangkauan.
+
+    \item \textbf{Topologi Jaringan Wireless:} Jaringan nirkabel dapat dibangun dengan berbagai topologi seperti \textit{infrastructure mode}, di mana perangkat terhubung melalui access point, atau \textit{ad-hoc mode} yang menghubungkan perangkat secara langsung tanpa access point.
+\end{itemize}
+
+
+%===========================================================%
+\section{Tugas Pendahuluan}
+
+\subsection*{1. Apa yang lebih baik, jaringan \textit{wired} atau \textit{wireless}?}
+
+Pemilihan antara jaringan \textit{wired} (kabel) dan \textit{wireless} (nirkabel) tergantung pada kebutuhan spesifik. Berikut adalah perbandingan keduanya:
+
+\begin{itemize}
+    \item \textbf{Kecepatan dan Stabilitas:} Jaringan \textit{wired} umumnya lebih cepat dan stabil dibandingkan \textit{wireless} karena tidak terganggu oleh interferensi sinyal.
+    \item \textbf{Mobilitas:} Jaringan \textit{wireless} lebih fleksibel dan memungkinkan mobilitas tinggi tanpa tergantung pada lokasi kabel.
+    \item \textbf{Keamanan:} Jaringan \textit{wired} lebih aman karena akses fisiknya terbatas, sedangkan \textit{wireless} lebih rentan terhadap penyadapan jika tidak diamankan dengan baik.
+    \item \textbf{Instalasi dan Skalabilitas:} \textit{Wireless} lebih mudah diinstal di lingkungan yang sulit dijangkau kabel dan lebih mudah diskalakan.
+\end{itemize}
+
+\textbf{Kesimpulan:} Jika prioritas adalah kecepatan, stabilitas, dan keamanan, maka jaringan \textit{wired} lebih baik. Namun jika mobilitas dan kemudahan instalasi lebih diutamakan, jaringan \textit{wireless} adalah pilihan yang lebih baik.
+
+\subsection*{2. Perbedaan antara router, access point, dan modem}
+
+\begin{itemize}
+    \item \textbf{Modem:} Perangkat yang menghubungkan jaringan lokal ke jaringan internet melalui penyedia layanan internet (ISP). Modem mengubah sinyal digital menjadi sinyal analog dan sebaliknya.
+    
+    \item \textbf{Router:} Perangkat yang mendistribusikan koneksi internet dari modem ke beberapa perangkat di jaringan lokal, baik melalui kabel (LAN) maupun nirkabel (Wi-Fi). Router juga mengatur lalu lintas data antar perangkat.
+    
+    \item \textbf{Access Point (AP):} Perangkat yang memperluas jaringan nirkabel dengan menyediakan titik akses tambahan. Access point biasanya terhubung ke router melalui kabel dan hanya menyediakan koneksi Wi-Fi.
+\end{itemize}
+
+\subsection*{3. Menghubungkan dua ruangan di gedung berbeda tanpa kabel}
+
+Jika ingin menghubungkan dua ruangan di gedung yang berbeda tanpa menggunakan kabel, perangkat yang dapat dipilih adalah:
+
+\begin{itemize}
+    \item \textbf{Wireless Bridge (Jembatan Nirkabel):} Perangkat ini digunakan untuk menghubungkan dua jaringan LAN yang terpisah secara fisik menggunakan koneksi nirkabel. Wireless bridge sangat cocok digunakan jika kedua gedung memiliki \textit{line of sight} (tidak ada halangan langsung).
+    
+    \item \textbf{Point-to-Point Wireless Link:} Menggunakan dua antena directional seperti antena Yagi atau parabola Wi-Fi yang dipasang di kedua gedung. Sistem ini menciptakan koneksi yang stabil antara dua titik.
+    
+    \item \textbf{Alasan:} Pemilihan \textit{wireless bridge} atau \textit{point-to-point link} dilakukan karena solusi ini dapat menyediakan koneksi yang cepat dan stabil tanpa perlu menarik kabel antar gedung, yang bisa mahal dan rumit.
+\end{itemize}
+
+
+
