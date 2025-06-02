@@ -1,0 +1,34 @@
+\section{Pendahuluan}
+\subsection*{Latar Belakang}
+
+Firewall dan Network Address Translation (NAT) merupakan dua komponen penting dalam pengelolaan dan pengamanan sistem jaringan komputer modern. Firewall berperan sebagai pengendali akses yang menyaring lalu lintas data berdasarkan aturan tertentu, sehingga hanya komunikasi yang sah yang diizinkan untuk melewati batas jaringan. Hal ini sangat krusial dalam mencegah akses yang tidak sah, serangan siber, dan penyebaran malware. Di sisi lain, NAT berfungsi untuk menerjemahkan alamat IP antara jaringan lokal dan jaringan publik. Dengan adanya NAT, banyak perangkat dalam jaringan privat dapat mengakses internet menggunakan satu alamat IP publik. Selain efisiensi penggunaan alamat IP, NAT juga menambah lapisan keamanan dengan menyembunyikan alamat IP internal dari jaringan luar. Oleh karena itu, pemahaman mendalam mengenai konfigurasi dan implementasi firewall serta NAT sangat diperlukan untuk membangun sistem jaringan yang aman dan efisien.
+
+\subsection*{Dasar Teori}
+
+\subsubsection{Firewall}
+
+Firewall adalah mekanisme keamanan yang dirancang untuk mengatur lalu lintas jaringan berdasarkan seperangkat aturan yang ditentukan. Firewall dapat memfilter paket data berdasarkan alamat IP sumber atau tujuan, port, dan protokol. Terdapat beberapa jenis firewall, di antaranya adalah packet filtering firewall, stateful firewall, dan application-level firewall. Packet filtering firewall menyaring paket berdasarkan informasi header, sedangkan stateful firewall dapat melacak status koneksi dan membuat keputusan berdasarkan konteks lalu lintas. Application-level firewall bekerja pada lapisan aplikasi dan mampu memeriksa konten dari lalu lintas jaringan. Penggunaan firewall sangat penting untuk mencegah akses yang tidak sah serta melindungi sistem dari berbagai jenis ancaman eksternal.
+
+\subsubsection{Network Address Translation (NAT)}
+
+Network Address Translation (NAT) adalah metode untuk mengubah alamat IP pada paket data saat melintasi perangkat jaringan, biasanya router. Tujuan utama NAT adalah untuk memungkinkan banyak perangkat dalam jaringan privat menggunakan satu alamat IP publik untuk mengakses internet. Terdapat tiga jenis utama NAT, yaitu Static NAT, Dynamic NAT, dan Port Address Translation (PAT). Static NAT secara tetap memetakan satu alamat IP privat ke satu alamat IP publik. Dynamic NAT menggunakan kumpulan alamat IP publik yang dialokasikan secara dinamis. Sementara PAT (sering disebut juga NAT overload) memungkinkan banyak alamat IP privat berbagi satu alamat IP publik dengan membedakan koneksi berdasarkan nomor port. NAT tidak hanya menghemat penggunaan alamat IP publik, tetapi juga memberikan perlindungan tambahan dengan menyembunyikan struktur jaringan internal dari pihak luar.
+
+
+
+%===========================================================%
+\section{Tugas Pendahuluan}
+
+\begin{enumerate}
+    \item \textbf{Jika kamu ingin mengakses web server lokal (IP: 192.168.1.10, port 80) dari jaringan luar, konfigurasi NAT apa yang perlu kamu buat?}
+    
+    Untuk memungkinkan akses ke web server lokal dari jaringan luar, diperlukan konfigurasi NAT jenis \textit{Port Forwarding} (juga dikenal sebagai \textit{Destination NAT}). Konfigurasi ini akan meneruskan permintaan dari alamat IP publik router ke alamat IP privat web server. Misalnya, permintaan dari jaringan luar ke IP publik pada port 80 akan diteruskan ke IP 192.168.1.10 pada port 80. Dengan konfigurasi ini, pengguna dari luar dapat mengakses layanan web server yang berada di dalam jaringan lokal.
+
+    \item \textbf{Menurutmu, mana yang lebih penting diterapkan terlebih dahulu di jaringan: NAT atau Firewall? Jelaskan alasanmu.}
+    
+    Secara teknis, NAT sering kali diperlukan terlebih dahulu agar perangkat dalam jaringan lokal dapat terhubung ke jaringan publik (seperti internet), terutama ketika menggunakan alamat IP privat. Namun, dari sisi keamanan, firewall lebih penting untuk diterapkan lebih awal guna membatasi dan mengendalikan lalu lintas jaringan sesuai kebijakan keamanan. Oleh karena itu, jika prioritasnya adalah konektivitas, maka NAT harus diterapkan terlebih dahulu. Namun jika keamanan menjadi fokus utama, maka firewall harus diprioritaskan agar sistem tidak terekspos secara langsung ke jaringan luar tanpa perlindungan.
+
+    \item \textbf{Apa dampak negatif jika router tidak diberi filter firewall sama sekali?}
+    
+    Jika router tidak diberi filter firewall, maka seluruh lalu lintas data, baik yang sah maupun berbahaya, akan diizinkan melewati jaringan tanpa kontrol. Hal ini dapat menyebabkan berbagai dampak negatif, seperti meningkatnya risiko serangan dari luar (misalnya DDoS, malware, atau akses tidak sah), kebocoran data, serta gangguan layanan pada sistem jaringan internal. Selain itu, ketiadaan firewall juga membuat jaringan lebih rentan terhadap eksploitasi celah keamanan dan aktivitas berbahaya lainnya yang dapat merugikan organisasi atau individu yang menggunakan jaringan tersebut.
+\end{enumerate}
+
