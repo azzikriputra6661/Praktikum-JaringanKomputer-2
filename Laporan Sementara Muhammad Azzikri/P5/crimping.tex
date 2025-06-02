@@ -1,0 +1,93 @@
+\section{Pendahuluan}
+\subsection*{Latar Belakang}
+
+Seiring dengan pesatnya perkembangan teknologi jaringan komputer, kebutuhan akan keamanan, efisiensi, serta pengelolaan lalu lintas data yang optimal menjadi semakin penting. Dalam implementasi jaringan modern, tidak hanya konektivitas antar perangkat yang diperhatikan, tetapi juga aspek keamanan komunikasi antar jaringan serta pengelolaan bandwidth agar distribusi trafik lebih terstruktur dan adil. Oleh karena itu, dalam modul praktikum ini dibahas beberapa konsep penting yaitu tunneling, IPSec, manajemen bandwidth menggunakan simple queue dan queue tree, serta pengaturan prioritas trafik. Melalui praktikum ini, mahasiswa diharapkan dapat memahami cara membangun jaringan yang aman menggunakan protokol IPSec dan tunneling, serta mengatur bandwidth dan prioritas trafik jaringan dengan metode antrian yang efektif. Hal ini sangat penting terutama dalam lingkungan jaringan yang memiliki keterbatasan sumber daya namun melayani banyak pengguna dengan kebutuhan trafik yang berbeda.
+
+
+\subsection*{Dasar Teori}
+
+\subsubsection{Tunneling}
+Tunneling adalah metode untuk mengenkapsulasi paket data dalam protokol lain, memungkinkan data untuk dikirim melalui jaringan yang tidak secara langsung mendukung jenis data tersebut. Dalam konteks jaringan komputer, tunneling sering digunakan untuk membuat koneksi antar jaringan pribadi melalui jaringan publik seperti internet, sehingga dapat digunakan untuk membangun Virtual Private Network (VPN). Protokol tunneling umum mencakup GRE (Generic Routing Encapsulation), PPTP, L2TP, dan IP-in-IP.
+
+\subsubsection{IPSec}
+Internet Protocol Security (IPSec) adalah protokol keamanan jaringan yang digunakan untuk mengamankan komunikasi IP melalui proses otentikasi dan enkripsi pada setiap paket IP dalam sesi komunikasi. IPSec dapat beroperasi dalam dua mode: transport mode dan tunnel mode. Transport mode mengenkripsi hanya bagian data dari paket, sementara tunnel mode mengenkripsi seluruh paket IP. IPSec umumnya digunakan dalam jaringan VPN untuk menjamin keamanan komunikasi data antar situs.
+
+\subsubsection{Simple Queue dan Queue Tree}
+\textit{Simple Queue} dan \textit{Queue Tree} adalah dua metode dalam manajemen bandwidth yang tersedia pada perangkat seperti MikroTik. Simple queue digunakan untuk membatasi bandwidth pada sebuah alamat IP atau range tertentu dengan konfigurasi yang relatif sederhana. Sedangkan queue tree memberikan fleksibilitas lebih dalam pengaturan bandwidth berdasarkan protokol, port, atau jenis trafik tertentu dan dapat digunakan untuk melakukan shaping dan prioritasi trafik berdasarkan hirarki.
+
+\subsubsection{Prioritas Trafik Bandwidth}
+Dalam manajemen jaringan, pemberian prioritas terhadap trafik tertentu disebut sebagai Quality of Service (QoS). Prioritas trafik bandwidth memungkinkan administrator jaringan mengatur jenis trafik mana yang harus diproses lebih dahulu berdasarkan urgensi dan kebutuhan. Contohnya, trafik suara dan video umumnya diberi prioritas lebih tinggi daripada trafik unduhan karena lebih sensitif terhadap delay. Implementasi prioritas ini umumnya menggunakan queue tree dengan penetapan priority level untuk tiap jenis trafik.
+
+
+%===========================================================%
+\section*{Tugas Pendahuluan}
+
+\paragraph{1. Konfigurasi VPN IPSec Site-to-Site}
+
+Dalam skenario pengamanan komunikasi antara kantor pusat dan cabang, VPN (Virtual Private Network) IPSec (Internet Protocol Security) dapat digunakan sebagai solusi yang andal. Proses negosiasi IPSec terdiri dari dua fase utama, yaitu:
+
+\begin{itemize}
+  \item \textbf{IKE Phase 1}: Pada fase ini, kedua pihak yang berkomunikasi membentuk tunnel aman yang disebut IKE SA (Security Association). Tujuan utamanya adalah untuk melakukan autentikasi satu sama lain dan membentuk kanal aman dengan menggunakan algoritma enkripsi dan autentikasi seperti AES, SHA, dan metode autentikasi pre-shared key (PSK) atau sertifikat. 
+  \item \textbf{IKE Phase 2}: Setelah IKE SA terbentuk, fase ini akan membuat IPSec SA yang digunakan untuk mengenkripsi data aktual. IKE Phase 2 juga menyepakati parameter keamanan seperti jenis protokol (ESP/AH), mode (tunnel/transport), dan waktu hidup kunci (lifetime).
+\end{itemize}
+
+Parameter keamanan penting yang perlu disepakati antara kedua router mencakup:
+\begin{enumerate}
+  \item \textbf{Algoritma Enkripsi}: Misalnya AES-256 untuk enkripsi data.
+  \item \textbf{Metode Autentikasi}: Seperti HMAC-SHA-256.
+  \item \textbf{Key Lifetime}: Misalnya 3600 detik, yang menunjukkan periode re-negosiasi kunci.
+\end{enumerate}
+
+\textbf{Contoh Konfigurasi Router (Cisco IOS)}:
+\begin{verbatim}
+crypto isakmp policy 10
+ encr aes
+ authentication pre-share
+ group 2
+crypto isakmp key mypsk address 192.168.1.2
+
+crypto ipsec transform-set MYSET esp-aes esp-sha-hmac
+crypto map MYMAP 10 ipsec-isakmp 
+ set peer 192.168.1.2
+ set transform-set MYSET
+ match address 110
+
+interface GigabitEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ crypto map MYMAP
+\end{verbatim}
+
+\textit{Referensi:} 
+Cisco, "IPSec VPN Configuration Guide", \url{https://www.cisco.com/c/en/us/support/docs/security-vpn/ipsec-negotiation/14136-vpn-trouble.html}
+
+\paragraph{2. Skema Queue Tree dan Pengaturan Bandwidth}
+
+Queue Tree adalah metode pengaturan trafik yang digunakan untuk memprioritaskan dan membatasi bandwidth berdasarkan jenis layanan. Dalam studi kasus sekolah dengan total bandwidth 100 Mbps, pembagian dilakukan sebagai berikut:
+
+\begin{itemize}
+  \item \textbf{Parent Queue}: Total bandwidth 100 Mbps.
+  \item \textbf{Child Queues}:
+  \begin{itemize}
+    \item E-learning: 40 Mbps
+    \item Guru \& Staf: 30 Mbps
+    \item Siswa: 20 Mbps
+    \item CCTV \& Update Sistem: 10 Mbps
+  \end{itemize}
+\end{itemize}
+
+\textbf{Penjelasan Marking dan Prioritas:}
+Marking dilakukan dengan cara menandai paket berdasarkan IP address, port, atau protocol menggunakan firewall mangle di Mikrotik. Setelah paket ditandai, queue tree akan menetapkan bandwidth dan prioritas berdasarkan tag tersebut.
+
+\textbf{Prioritas dan Limit:}
+\begin{itemize}
+  \item E-learning: limit-at 40M, max-limit 40M, priority=1
+  \item Guru \& Staf: limit-at 30M, max-limit 30M, priority=2
+  \item Siswa: limit-at 20M, max-limit 20M, priority=3
+  \item CCTV \& Update Sistem: limit-at 10M, max-limit 10M, priority=4
+\end{itemize}
+
+Skema ini memastikan bahwa e-learning memiliki prioritas tertinggi agar pembelajaran daring tidak terganggu.
+
+\textit{Referensi:}
+Mikrotik Wiki, "Queue Tree", \url{https://wiki.mikrotik.com/wiki/Manual:Queues_-_Queue_Tree}
+
