@@ -1,0 +1,15 @@
+\section{Pendahuluan}
+\subsection{Latar Belakang}
+IPSec dibuat untuk kebutuhan melindungi data sensitif yang dikirim melalui jaringan-jaringan publik seperti internet. Teknologi seperti VPN menggunakan IPSec pada dasarnya, dan memungkinkan pengiriman data antar lokasi, misalnya kantor pusat ke cabang secara aman dan efisien.
+
+\subsection{Dasar Teori}
+IPSec atau Internet Protocol Security adalah protokol keamanan yang digunakan untuk mengamankan komunikasi data melalui jaringan IP dengan mengenkripsi dan mengotentikasi paket -paket data, layaknya sebuah VPN. IPSec terdiri dari dua fase, yaitu IKE Phase 1 dan Phase 2. IKE Phase 1 membentuk saluran terenkrpsi kedua end point, dan IKE Phase 2 menghandle parameter untuk mengamankan data, seperti algoritma enkripsi dan/atau metode autentikasi.
+
+%===========================================================%
+\section{Tugas Pendahuluan}
+Bagian ini berisi jawaban dari tugas pendahuluan yang telah anda kerjakan, beserta penjelasan dari jawaban tersebut
+\begin{enumerate}
+	\item Pada IKE Phase 1, fase ini mempersiapkan saluran yang aman dan mengautentikasi kedua endpoint. Sedangkan IKE Phase 2 membentuk tunnel IPSec agar transfer data menjadi aman. Parameter keamanan yang harus disepakati meliputi algoritma enkripsi (contohnya AES128), algoritma autentikasi (contohnya HMAC-SHA1), metode autentikasi (contohnya PSK/pre shared keys), diffie-hellman group, lifetime (84600 detik untuk phase 1 dan 3600 detik untuk phase 2)
+        \item Parent 100Mbps (GLOBAL), child Elearning 40Mbps prioritas 1,, Child guru dan staf 30Mbps prioritas 2, Siswa 20Mbps prioritas 3, CCTV dan update sistem 10Mbps prioritas 4
+        \item Referensi: Cisco Community – IPsec Tunnel: Understanding Phase 1 and 2; NetworkLessons – IPsec (Internet Protocol Security); MikroTik Docs – IPsec and Site-to-Site Example; MikroTik Docs – Queues and PCQ Example .
+\end{enumerate}
