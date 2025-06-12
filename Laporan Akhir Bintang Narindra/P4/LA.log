@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.8)  1 JUN 2025 23:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.8)  12 JUN 2025 18:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,22 +884,22 @@ Package pdftex.def Info: Cover/img/footer.png  used on input line 35.
 {C:/Users/BINTANG/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}{C:/User
 s/BINTANG/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/tex-gyre/q-ec.enc} <./Cove
 r/img/logodepart.png> <./Cover/img/miot.png> <./Cover/img/footer.png>])
-(P4/wireless.tex
-<p4/img/bridge.jpg, id=43, 723.45282pt x 812.28468pt>
-File: p4/img/bridge.jpg Graphic file (type jpg)
-<use p4/img/bridge.jpg>
-Package pdftex.def Info: p4/img/bridge.jpg  used on input line 7.
-(pdftex.def)             Requested size: 241.84843pt x 271.53761pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-<p4/img/address.jpg, id=44, 251.43938pt x 260.47313pt>
-File: p4/img/address.jpg Graphic file (type jpg)
-<use p4/img/address.jpg>
-Package pdftex.def Info: p4/img/address.jpg  used on input line 18.
-(pdftex.def)             Requested size: 241.84843pt x 250.53624pt.
+(P4/NAT.tex
+<p4/img/restart.jpg, id=43, 590.205pt x 812.28468pt>
+File: p4/img/restart.jpg Graphic file (type jpg)
+<use p4/img/restart.jpg>
+Package pdftex.def Info: p4/img/restart.jpg  used on input line 4.
+(pdftex.def)             Requested size: 193.47578pt x 266.26997pt.
+<p4/img/login.jpg, id=44, 588.69937pt x 812.28468pt>
+File: p4/img/login.jpg Graphic file (type jpg)
+<use p4/img/login.jpg>
+Package pdftex.def Info: p4/img/login.jpg  used on input line 6.
+(pdftex.def)             Requested size: 193.47578pt x 266.95166pt.
+<p4/img/DHCP2.jpg, id=45, 553.31718pt x 398.23781pt>
+File: p4/img/DHCP2.jpg Graphic file (type jpg)
+<use p4/img/DHCP2.jpg>
+Package pdftex.def Info: p4/img/DHCP2.jpg  used on input line 8.
+(pdftex.def)             Requested size: 193.47578pt x 139.24554pt.
 
 
 
@@ -907,121 +907,139 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.19 	\item U
-             ji ping antar router\\
-<miot.png, id=45, 200.75pt x 200.75pt>
+l.9 	\item K
+            onfigurasi NAT\\
+<miot.png, id=46, 200.75pt x 200.75pt>
 File: miot.png Graphic file (type png)
 <use miot.png>
-Package pdftex.def Info: miot.png  used on input line 19.
+Package pdftex.def Info: miot.png  used on input line 9.
 (pdftex.def)             Requested size: 238.9995pt x 239.01491pt.
  [1
 
- <./miot.png> <./p4/img/bridge.jpg>]
-<p4/img/pingrslt3.jpg, id=63, 445.665pt x 292.09125pt>
-File: p4/img/pingrslt3.jpg Graphic file (type jpg)
-<use p4/img/pingrslt3.jpg>
-Package pdftex.def Info: p4/img/pingrslt3.jpg  used on input line 20.
-(pdftex.def)             Requested size: 193.47578pt x 126.80461pt.
-<p4/img/pingrslt2.jpg, id=64, 417.05812pt x 231.11343pt>
-File: p4/img/pingrslt2.jpg Graphic file (type jpg)
-<use p4/img/pingrslt2.jpg>
-Package pdftex.def Info: p4/img/pingrslt2.jpg  used on input line 22.
-(pdftex.def)             Requested size: 417.0571pt x 231.11287pt.
+ <./miot.png> <./p4/img/restart.jpg> <./p4/img/login.jpg>]
+<p4/img/NAT.jpg, id=54, 593.96906pt x 812.28468pt>
+File: p4/img/NAT.jpg Graphic file (type jpg)
+<use p4/img/NAT.jpg>
+Package pdftex.def Info: p4/img/NAT.jpg  used on input line 10.
+(pdftex.def)             Requested size: 193.47578pt x 264.58432pt.
+<p4/img/8888_p1.jpg, id=55, 587.19376pt x 812.28468pt>
+File: p4/img/8888_p1.jpg Graphic file (type jpg)
+<use p4/img/8888_p1.jpg>
+Package pdftex.def Info: p4/img/8888_p1.jpg  used on input line 12.
+(pdftex.def)             Requested size: 193.47578pt x 267.63336pt.
+<p4/img/firewall_set.jpg, id=56, 593.96906pt x 812.28468pt>
+File: p4/img/firewall_set.jpg Graphic file (type jpg)
+<use p4/img/firewall_set.jpg>
+Package pdftex.def Info: p4/img/firewall_set.jpg  used on input line 14.
+(pdftex.def)             Requested size: 193.47578pt x 264.58432pt.
 
 
-[2 <./p4/img/address.jpg> <./p4/img/pingrslt3.jpg> <./p4/img/pingrslt2.jpg>]
+[2 <./p4/img/DHCP2.jpg> <./p4/img/NAT.jpg> <./p4/img/8888_p1.jpg>]
+<p4/img/block1.jpg, id=63, 590.205pt x 812.28468pt>
+File: p4/img/block1.jpg Graphic file (type jpg)
+<use p4/img/block1.jpg>
+Package pdftex.def Info: p4/img/block1.jpg  used on input line 16.
+(pdftex.def)             Requested size: 193.47578pt x 266.26997pt.
+<p4/img/block2.jpg, id=64, 597.73312pt x 812.28468pt>
+File: p4/img/block2.jpg Graphic file (type jpg)
+<use p4/img/block2.jpg>
+Package pdftex.def Info: p4/img/block2.jpg  used on input line 18.
+(pdftex.def)             Requested size: 193.47578pt x 262.92346pt.
+
+
+[3 <./p4/img/firewall_set.jpg> <./p4/img/block1.jpg>]
+<p4/img/bridge.jpg, id=72, 963.6pt x 541.27219pt>
 File: p4/img/bridge.jpg Graphic file (type jpg)
 <use p4/img/bridge.jpg>
-Package pdftex.def Info: p4/img/bridge.jpg  used on input line 29.
-(pdftex.def)             Requested size: 241.84843pt x 271.53761pt.
+Package pdftex.def Info: p4/img/bridge.jpg  used on input line 20.
+(pdftex.def)             Requested size: 193.47578pt x 108.67372pt.
+<p4/img/ping_blocked.jpg, id=73, 963.6pt x 542.025pt>
+File: p4/img/ping_blocked.jpg Graphic file (type jpg)
+<use p4/img/ping_blocked.jpg>
+Package pdftex.def Info: p4/img/ping_blocked.jpg  used on input line 22.
+(pdftex.def)             Requested size: 193.47578pt x 108.82487pt.
+<p4/img/unblock.jpg, id=74, 587.94656pt x 812.28468pt>
+File: p4/img/unblock.jpg Graphic file (type jpg)
+<use p4/img/unblock.jpg>
+Package pdftex.def Info: p4/img/unblock.jpg  used on input line 24.
+(pdftex.def)             Requested size: 193.47578pt x 267.2987pt.
 
-Overfull \hbox (2.80157pt too wide) in paragraph at lines 31--32
-[]\T1/qhv/m/n/10.95 Pada Router B, klik scan, kemudian cari nama "PointToPoint_
-2" dan klik connect, setelah connect
+
+[4 <./p4/img/block2.jpg> <./p4/img/bridge.jpg> <./p4/img/ping_blocked.jpg>]
+<p4/img/spdtst.jpg, id=82, 963.6pt x 517.935pt>
+File: p4/img/spdtst.jpg Graphic file (type jpg)
+<use p4/img/spdtst.jpg>
+Package pdftex.def Info: p4/img/spdtst.jpg  used on input line 26.
+(pdftex.def)             Requested size: 193.47578pt x 103.9882pt.
+
+Overfull \hbox (1.27611pt too wide) in paragraph at lines 29--30
+\T1/qhv/m/n/10.95 Pada praktikum ini membahas tentang NAT dan Firewall. Pada pe
+rcobaan pertama adalah pengaturan
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--39
-
+Overfull \hbox (19.26791pt too wide) in paragraph at lines 29--30
+\T1/qhv/m/n/10.95 membuka speedtest.net akan terus mengalami loading. Kemudian 
+ketika blokir dibuka dan diperbolehkan,
  []
 
-File: p4/img/address.jpg Graphic file (type jpg)
-<use p4/img/address.jpg>
-Package pdftex.def Info: p4/img/address.jpg  used on input line 40.
-(pdftex.def)             Requested size: 241.84843pt x 250.53624pt.
-
-
-[3]
-File: p4/img/pingrslt3.jpg Graphic file (type jpg)
-<use p4/img/pingrslt3.jpg>
-Package pdftex.def Info: p4/img/pingrslt3.jpg  used on input line 42.
-(pdftex.def)             Requested size: 193.47578pt x 126.80461pt.
-File: p4/img/pingrslt2.jpg Graphic file (type jpg)
-<use p4/img/pingrslt2.jpg>
-Package pdftex.def Info: p4/img/pingrslt2.jpg  used on input line 44.
-(pdftex.def)             Requested size: 417.0571pt x 231.11287pt.
-File: p4/img/bridge.jpg Graphic file (type jpg)
-<use p4/img/bridge.jpg>
-Package pdftex.def Info: p4/img/bridge.jpg  used on input line 51.
-(pdftex.def)             Requested size: 241.84843pt x 271.53761pt.
-
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
-
- []
-
-File: p4/img/address.jpg Graphic file (type jpg)
-<use p4/img/address.jpg>
-Package pdftex.def Info: p4/img/address.jpg  used on input line 62.
-(pdftex.def)             Requested size: 241.84843pt x 250.53624pt.
-
-
-[5]
-File: p4/img/pingrslt3.jpg Graphic file (type jpg)
-<use p4/img/pingrslt3.jpg>
-Package pdftex.def Info: p4/img/pingrslt3.jpg  used on input line 64.
-(pdftex.def)             Requested size: 193.47578pt x 126.80461pt.
-File: p4/img/pingrslt2.jpg Graphic file (type jpg)
-<use p4/img/pingrslt2.jpg>
-Package pdftex.def Info: p4/img/pingrslt2.jpg  used on input line 66.
-(pdftex.def)             Requested size: 417.0571pt x 231.11287pt.
-
-Overfull \hbox (12.71985pt too wide) in paragraph at lines 69--76
-\T1/qhv/m/n/10.95 sebagai Station pseudobridge. Setting ini seharusnya menghasi
-lkan sebuah bridge yang memungkinkan
- []
-
-
-
-[6]
-<p4/img/tumod.png, id=119, 867.24pt x 508.14844pt>
-File: p4/img/tumod.png Graphic file (type png)
-<use p4/img/tumod.png>
-Package pdftex.def Info: p4/img/tumod.png  used on input line 78.
-(pdftex.def)             Requested size: 338.58632pt x 198.3942pt.
-<p4/img/tumod2.png, id=120, 680.5425pt x 73.77562pt>
+<p4/img/topologi.png, id=83, 1445.4pt x 767.86874pt>
+File: p4/img/topologi.png Graphic file (type png)
+<use p4/img/topologi.png>
+Package pdftex.def Info: p4/img/topologi.png  used on input line 32.
+(pdftex.def)             Requested size: 338.58632pt x 179.87506pt.
+<p4/img/tumod1.png, id=84, 660.21657pt x 669.2503pt>
+File: p4/img/tumod1.png Graphic file (type png)
+<use p4/img/tumod1.png>
+Package pdftex.def Info: p4/img/tumod1.png  used on input line 35.
+(pdftex.def)             Requested size: 193.47578pt x 196.12pt.
+<p4/img/tumod2.png, id=85, 660.21657pt x 669.2503pt>
 File: p4/img/tumod2.png Graphic file (type png)
 <use p4/img/tumod2.png>
-Package pdftex.def Info: p4/img/tumod2.png  used on input line 80.
-(pdftex.def)             Requested size: 483.69687pt x 52.4362pt.
+Package pdftex.def Info: p4/img/tumod2.png  used on input line 36.
+(pdftex.def)             Requested size: 193.47578pt x 196.12pt.
+<p4/img/tumod3.png, id=86, 660.21657pt x 669.2503pt>
+File: p4/img/tumod3.png Graphic file (type png)
+<use p4/img/tumod3.png>
+Package pdftex.def Info: p4/img/tumod3.png  used on input line 37.
+(pdftex.def)             Requested size: 193.47578pt x 196.12pt.
+<p4/img/Firewall.png, id=87, 660.21657pt x 669.2503pt>
+File: p4/img/Firewall.png Graphic file (type png)
+<use p4/img/Firewall.png>
+Package pdftex.def Info: p4/img/Firewall.png  used on input line 41.
+(pdftex.def)             Requested size: 338.58632pt x 343.23299pt.
+<p4/img/tumod4.png, id=88, 660.21657pt x 669.2503pt>
+File: p4/img/tumod4.png Graphic file (type png)
+<use p4/img/tumod4.png>
+Package pdftex.def Info: p4/img/tumod4.png  used on input line 44.
+(pdftex.def)             Requested size: 338.58632pt x 343.23299pt.
+<p4/img/tumod5.png, id=89, 660.21657pt x 669.2503pt>
+File: p4/img/tumod5.png Graphic file (type png)
+<use p4/img/tumod5.png>
+Package pdftex.def Info: p4/img/tumod5.png  used on input line 46.
+(pdftex.def)             Requested size: 193.47578pt x 196.12pt.
+<p4/img/tumod6.png, id=90, 660.21657pt x 669.2503pt>
+File: p4/img/tumod6.png Graphic file (type png)
+<use p4/img/tumod6.png>
+Package pdftex.def Info: p4/img/tumod6.png  used on input line 47.
+(pdftex.def)             Requested size: 193.47578pt x 196.12pt.
 
-Overfull \hbox (21.4535pt too wide) in paragraph at lines 84--85
-\T1/qhv/m/n/10.95 menghubungkan secara langsung antara 2 perangkat, Point-to-Mu
-ltipoint yang menghubungkan beberapa
- []
 
+[5 <./p4/img/unblock.jpg> <./p4/img/spdtst.jpg>]
 
+[6 <./p4/img/topologi.png> <./p4/img/tumod1.png> <./p4/img/tumod2.png> <./p4/im
+g/tumod3.png>]
 
-[7 <./p4/img/tumod.png> <./p4/img/tumod2.png>]
-<p4/img/pingrslt1.jpg, id=127, 450.18187pt x 286.06876pt>
-File: p4/img/pingrslt1.jpg Graphic file (type jpg)
-<use p4/img/pingrslt1.jpg>
-Package pdftex.def Info: p4/img/pingrslt1.jpg  used on input line 89.
-(pdftex.def)             Requested size: 450.18077pt x 286.06805pt.
+[7 <./p4/img/Firewall.png> <./p4/img/tumod4.png>]
+<p4/img/topologi_praktikum.jpg, id=111, 4111.36pt x 3083.52pt>
+File: p4/img/topologi_praktikum.jpg Graphic file (type jpg)
+<use p4/img/topologi_praktikum.jpg>
+Package pdftex.def Info: p4/img/topologi_praktikum.jpg  used on input line 55.
+(pdftex.def)             Requested size: 193.47578pt x 145.10425pt.
 )
 
-[8 <./p4/img/pingrslt1.jpg>] (LA.aux)
+[8 <./p4/img/tumod5.png> <./p4/img/tumod6.png> <./p4/img/topologi_praktikum.jpg
+>] (LA.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
@@ -1042,22 +1060,21 @@ Package logreq Info: Writing requests to 'LA.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21541 strings out of 471882
- 375084 string characters out of 5520723
- 1188257 words of memory out of 5000000
- 47780 multiletter control sequences out of 15000+600000
+ 21606 strings out of 471882
+ 377280 string characters out of 5520723
+ 1187247 words of memory out of 5000000
+ 47878 multiletter control sequences out of 15000+600000
  669843 words of font info for 66 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 75i,12n,79p,1197b,593s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/BINTANG/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/c
-msy10.pfb><C:/Users/BINTANG/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/tex-g
-yre/qhvb.pfb><C:/Users/BINTANG/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/te
-x-gyre/qhvbi.pfb><C:/Users/BINTANG/AppData/Roaming/MiKTeX/2.9/fonts/type1/publi
-c/tex-gyre/qhvr.pfb>
-Output written on LA.pdf (9 pages, 575625 bytes).
+ 75i,12n,79p,1197b,595s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/BINTANG/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/tex-gyre/qhvb
+.pfb><C:/Users/BINTANG/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/tex-gyre/q
+hvbi.pfb><C:/Users/BINTANG/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/tex-gy
+re/qhvr.pfb>
+Output written on LA.pdf (9 pages, 2677001 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
- 60 named destinations out of 1000 (max. 500000)
- 104 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 142 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
+ 27 named destinations out of 1000 (max. 500000)
+ 174 words of extra memory for PDF output out of 10000 (max. 10000000)
 
