@@ -1,0 +1,40 @@
+\section{Pendahuluan}
+\subsection{Latar Belakang}
+Dengan berkembangnya internet serta bertambahnya jumlah penduduk dunia menjadi sebuah alasan meningkatnya perangkat elektronik di kehidupan kita sehari-hari. Tidak lagi terbatas pada sebuah komputer rumah, saat ini banyak sekali perangkat-perangkat elektronik yang terhubung pada jaringan internet smartphone, laptop, Smart TV, Smart Car bahkan Smart Fridge juga terhubung ke internet dan tidak menutup kemungkinan kedepannya jumlah ini semakin bertambah dan untuk terhubung dalam sebuah jaringan, semua perangkat tersebut membutuhkan sebuah alamat IP. Namun, jumlah Alamat IP yang tersedia dari IPv4 juga terbatas hingga 4 Miliar alamat, sehingga di kembangkanlah IPv6. Modul 2 Praktikum Jaringan Komputer ini dilakukan untuk memberi pengetahuan tentang pembagian alamat subnet dan routing IPv6 untuk menyiapkan mahasiswa ketika IPv6 menjadi lebih umum digunakan dibandingkan IPv4.
+
+\subsection{Dasar Teori}
+Dalam jaringan komputer untuk melakukan pertukaran informasi sebuah perangkat harus memiliki sebuah identitas berupa alamat yang membedakan perangkat tersebut dengan perangkat lain yang ada didalam jaringan tersebut. Salah satu jenis alamat jaringan yang digunakan dalam kehidupan kita utamanya dalam penggunaan Internet adalah Internet Protocol Address (IP Address).
+Saat ini terdapat 2 versi IP yang digunakan yaitu IPv4 dan IPv6. IPv4 adalah versi IP yang saat ini paling banyak digunakan secara komersil, dan pertama kali digunakan pada tahun 1983. IPv4 memiliki panjang alamat 32-bit yang dibagi menjadi 4 blok 8-bit, dengan demikian IPv4 memiliki total $2^{32}$ yaitu sekitar total 4 Miliar alamat yang tersedia. Pada saat diluncurkan jumlah tersebut sudah dirasa cukup, namun pada tahun 1990-an seiring dengan perkembangan zaman jumlah alamat yang tersedia dengan cepat berkurang. Sehingga sebuah organisasi bernama \textit{Internet Engineering Task Force}(IETF), mulai mengembangkan versi terbaru dari alamat IP untuk menjawab permasalahan ini, hasil pengembangan IEFT inilah yang kemudian disebun dengan IPv6.\\
+Berbeda dengan IPv4, IPv6 memiliki panjang alamat sebesar 128-bit yang dibagi menjadi 8 bllok 16-bit dan total alamat yang tersedia di IPv6 adalah $2^{128}$ atau sekitar 3.4x$10^{38}$ alamat yang jauh lebih besar dibandingkan IPv4. Pada IPv6, penulisan alamat menggunakan representasi bilangan hexadecimal. Selain itu, terdapat kelebihan-kelebihan lain yang dimiliki IPv6 sseperti, keamanan yang lebih baik dibandingkan IPv4, Routing yang lebih efisien, Kecepatan yang lebih tinggi karena tidak dibutuhkannya NAT(Network Address Translation), Header hanya sebesar 40 byte dan tidak berubah, dans sebagainya. Secara sederhana, metode routing IPv6 tidak jauh berbeda dengan IPv4, terdapat 2 metode yaitu metode routing statits dan metode routing dinamis. Pada routing statis konfigurasi jaringan diatur secara manual dan tidak akan berubah, sehingga cocok digunakan pada jaringan yang tidak mengalami perubahan topologi. Sementara routing dinamis, konfigurasi jaringan akan berubah secara otomatis sehingga sangat cocok untuk jaringan yang lebih besar dan kompleks. Saat ini, IPv6 masih belum banyak digunakan secara komersil, namun tidak menutup kemungkinan kedepannya seiring dengan perkembangan zaman dan makin banyaknya perangkat-perangkat elektronik di kehidupan kita sehari-hari yang terhubung ke internet akan membuat IPv6 semakin banyak digunakan.\\ 
+
+
+%===========================================================%
+\section{Tugas Pendahuluan}
+\begin{enumerate}
+	\item IPv6 adalah konfigurasi IP yang berupa pengembangan dari IPv4. Perbedaan antara IPv6 dan IPv4 adalah Panjang alamat IPv6 adalah 128-bit sementara IPv4 panjang alamatnya 32-bit, Jumlah IP yang tersedia di IPv6 lebih besar ($2^{128}$ IP dibanding $2^{32}$IP), Penulisan alamat di IPv6 menggunakan bilangan heksadesimal sementara IPv4 menggunakan bilangan desimal.
+	\item $\bullet$ Subnet A: 2001:db8:0:0::/64\\
+	$\bullet$ Subnet B: 2001:db8:0:1::/64\\
+	$\bullet$ Subnet C: 2001:db8:0:2::/64\\
+	$\bullet$ Subnet D: 2001:db8:0:4::/64\\
+	\item a. $\bullet$ ether1 (subnet A): 2001:db8:0:0::1/64\\
+	 $\bullet$ ether2 (subnet B): 2001:db8:0:1::1/64\\
+	 $\bullet$ ether3 (subnet C): 2001:db8:0:2::1/64\\
+	 $\bullet$ ether4 (subnet D): 2001:db8:0:3::1/64\\
+	 \\
+	 b. ip -6 addr add 2001:db8:0:0::1/64 dev ether1\\
+	 ip -6 addr add 2001:db8:0:1::1/64 dev ether2\\
+	 ip -6 addr add 2001:db8:0:2::1/64 dev ether3\\
+	 ip -6 addr add 2001:db8:0:3::1/64 dev ether4
+	
+	\item \begin{tabular}{|l|l|l|l|l|}
+		\hline
+		\textbf{Subnet} & \textbf{Prefix} & \textbf{Router IP (Interface)} & \textbf{PC1 IP} & \textbf{PC2 IP} \\
+		\hline
+		Subnet A & \text{2001:db8:0:0::/64} & \text{2001:db8:0:0::1} (ether1) & \text{2001:db8:0:0::10} & \text{2001:db8:0:0::11} \\
+		Subnet B & \text{2001:db8:0:1::/64} & \text{2001:db8:0:1::1} (ether2) & \text{2001:db8:0:1::10} & \text{2001:db8:0:1::11} \\
+		Subnet C & \text{2001:db8:0:2::/64} & \text{2001:db8:0:2::1} (ether3) & \text{2001:db8:0:2::10} & \text{2001:db8:0:2::11} \\
+		Subnet D & \text{2001:db8:0:3::/64} & \text{2001:db8:0:3::1} (ether4) & \text{2001:db8:0:3::10} & \text{2001:db8:0:3::11} \\
+		\hline
+	\end{tabular}\\
+	\item Routing statis IPv6 memiliki fungsi untuk memnentukan jalur tetap antarmuka atau router tertentu, mengontrol lalu lintas jaringan secara manual, dan sebagai fallback apabila terjadi masalah jika terjadi pada routing dinamis. Metode routing statis digunakan apabila skala jaringan tidak terlalu besar, jika topologi tidak perlu untuk sering berubah sehingga IP tidak perlu diubah-ubah.
+\end{enumerate}
